@@ -1,0 +1,33 @@
+.p-menu {
+  border: 1px solid var(--whitegray);
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 7px 0px;
+}
+
+.p-menu .p-menuitem-text {
+  line-height: 1.2;
+}
+
+.p-menu .p-menuitem {
+  padding: 0;
+}
+
+.p-menu .p-menuitem a {
+  /* Replace with the appropriate padding values */
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.p-menu .p-menuitem .p-menuitem-link {
+  color: var(--txtMenuDropdown);
+}
+
+.p-menu .p-menuitem:hover {
+  transition: all 0.2s ease-in-out;
+  transition-property: background-color, color;
+  background-color: var(--blue);
+}
+
+.p-menu .p-menuitem:hover .p-menuitem-link {
+  color: var(--white) !important;
+}

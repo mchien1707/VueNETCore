@@ -1,0 +1,5 @@
+{
+  "apiUrl": "https://vd-uud-test-api.azurewebsites.net/graphql",
+  "authority": "https://dev.safewhere.local/runtime/oauth2",
+  "clientId": "vd_test"
+}

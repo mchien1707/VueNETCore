@@ -1,0 +1,39 @@
+trigger:
+  branches:
+    include:
+      - features/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    displayName: 'Install Node.js'
+    inputs:
+      versionSpec: '14.x'
+
+  - task: CacheBeta@1
+    inputs:
+      key: npm | $(Agent.OS) | package-lock.json
+      path: /home/vsts/.npm
+      restoreKeys: npm | $(Agent.OS) | package-lock.json
+    displayName: Cache NPM packages
+
+  - task: Npm@1
+    displayName: 'Install NPM packages'
+    inputs:
+      verbose: false
+
+  - task: Npm@1
+    displayName: 'Linting'
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: 'run lint'
+
+  - task: Npm@1
+    displayName: 'Build solution'
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: 'run build'

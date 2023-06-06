@@ -1,0 +1,35 @@
+:root {
+    --blue: #005eb8;
+    --lightblue: #005eb8;
+    --white: #ffffff;
+    --whitegray: #eef2f6;
+    --txtMenuDropdown: #313C3F;
+  }
+
+* {
+  box-sizing: border-box;
+  text-align: start;
+}
+
+.user-onbard-info .row {
+  justify-content: center;
+}
+
+.btn-light.inverted {
+  color: #5ab6eb;
+  border: none;
+}
+
+.btn-light.inverted:hover {
+  background-color: #5ab6eb;
+  color: var(--white);
+}
+
+.btn.btn-primary {
+  background-color: var(--blue);
+  border-radius: unset;
+}
+
+@import "button.css";
+@import "modal.css";
+@import "menu.css";

@@ -1,0 +1,18 @@
+overwrite: true
+schema: "https://vd-uud-test-api.azurewebsites.net/graphql"
+documents: ["src/**/*.graphql", "src/**/*.vue", "src/**/*.ts"]
+generates:
+  src/graphql/gpltypes.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-vue-apollo
+    config:
+      vueApolloComposableImportFrom: "@vue/apollo-composable"
+      vueCompositionApiImportFrom: "vue"
+      nonOptionalTypename: false
+      maybeValue: "T | null"
+      skipTypename: true
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
